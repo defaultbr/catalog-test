@@ -16,32 +16,24 @@ spec:
       required:
         - name
       properties:
-        name:
-          title: Name
+        firstName:
           type: string
-          description: Unique name of the component
+          title: First name
+          default: Chuck
           ui:autofocus: true
-          ui:options:
-            rows: 5
-        owner:
-          title: Owner
+          ui:emptyValue: ''
+          ui:autocomplete: family-name
+        lastName:
           type: string
-          description: Owner of the component
-          ui:field: OwnerPicker
-          ui:options:
-            allowedKinds:
-              - Group
-    - title: Choose a location
-      required:
-        - repoUrl
-      properties:
-        repoUrl:
-          title: Repository Location
+          title: Last name
+          ui:emptyValue: ''
+          ui:autocomplete: given-name
+        telephone:
           type: string
-          ui:field: RepoUrlPicker
+          title: Telephone
+          minLength: 10
           ui:options:
-            allowedHosts:
-              - github.com
+            inputType: tel
 
   # here's the steps that are executed in series in the scaffolder backend
   steps:
